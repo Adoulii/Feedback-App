@@ -1,0 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap');
+*{
+ font-family: 'Jost', sans-serif;
+
+}
+body{
+background-color:#F7F8FD ;
+}
+a{
+    background-color: #E0E7FF;
+}
+a:hover{
+    background-color: #1F2937;
+    text:white;
+    
+}
+
