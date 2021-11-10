@@ -2,17 +2,20 @@ import React from "react";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import { LightBulbIcon, ChevronDownIcon } from "@heroicons/react/solid";
+import Feedback_list from "./Feedback_list";
+import "../divstyle.css";
 
 function Home() {
   return (
     <div className="grid grid-cols-6 grid-rows-6 gap-2 py-20">
-      <div className="col-start-2 space-y-5 ">
+      <div className=" col-start-2 space-y-5 ">
         <div className="intro h-32 bg-gray-800 rounded-lg py-6 px-6 ">
           <p className="text-white font-bold text-left">Front end Mentor</p>
           <p className="text-white text-left opacity-70">Feedback Board</p>
         </div>
 
         <div className="flex flex-wrap bg-white rounded-lg px-5 py-6 space-x-1 space-y-2">
+          <Button text="All" />
           <Button text="UI" />
           <Button text="UX" />
           <Button text="Enhancement" />
@@ -46,11 +49,9 @@ function Home() {
           </div>
         </div>
 
-        <div className="row-start-4 row-span-3 bg-white h-full rounded-lg px-5 py-4">
-          <div className="text-center ">
-          <h1 className="font-bold font-mono text-gray-800 mb-2 ">There is no feedback yet.</h1>
-          <h1 className="font-medium font-mono text-gray-800 leading-6 flex flex-wrap">Got a suggestion? Found a bug that needs to be squashed? We love hearing about new ideas to improve our app.</h1>
-
+        <div className="row-start-4 row-span-3 bg-white h-auto rounded-lg px-5 py-3">
+          <div className=" ">
+            <Feedback_list />
           </div>
         </div>
       </div>
