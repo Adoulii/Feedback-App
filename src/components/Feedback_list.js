@@ -1,32 +1,27 @@
 import { useState, useEffect } from "react";
+import calcComments from "../utils/calcComments";
 
 import Feedback from "./Feedback";
 function Feedback_list({productRequests}) {
   
-
-   function calcComments(comments){
-
-       
-       const sum =  comments.reduce((acc, val)=>{
-          return val.replies ?  acc+ val.replies.length : acc ;   
-
-        },0)
-        return sum + comments.length
-   }
-
   return (
     <div>
 
       {productRequests.map((request, i) => {
         return (
-          <Feedback
+         <div className="rounded-lg bg-white mb-3 h-auto ">
+         <Feedback
             key={i}
             upvotes={request.upvotes}
-            Text={request.title}
-            Parag={request.description}
+            text={request.title}
+            parag={request.description}
             butt={request.ux}
-            Comments={request.comments ? calcComments(request.comments) : 0}
+            id = {request.id}
+            comments={request.comments ? calcComments(request.comments) : 0}
           />
+         </div>
+         
+          
         ) 
       })}
     </div>

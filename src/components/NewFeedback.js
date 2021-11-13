@@ -13,7 +13,7 @@ function NewFeedback() {
             Go back
           </Link>
         </div>
-        <div className="form bg-white h-auto px-4 py-4 space-y-10 h-full rounded-lg">
+        <div className="form bg-white h-auto px-4 py-4 space-y-10 overflow-hidden rounded-lg">
           <h1 className="text-gray-800 text-2xl font-bold font-mono">
             Create New Feedback
           </h1>

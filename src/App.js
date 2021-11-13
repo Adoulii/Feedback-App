@@ -1,10 +1,8 @@
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Create from "./pages/Create";
 import Home from "./components/Home";
 import NewFeedback from "./components/NewFeedback";
-import Feedback_list from "./components/Feedback_list";
-import Feedback from "./components/Feedback";
+import View_feed from "./components/View_feed";
 
 function App() {
   return (
@@ -12,6 +10,7 @@ function App() {
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/create" component = {NewFeedback}/>
+        <Route path="/feedview/:id" component={View_feed}/>
       </Switch>
     </Router>
 

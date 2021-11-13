@@ -10,16 +10,9 @@ import "../divstyle.css";
 function Home() 
 {
   
-
-
   const [filtredFeedback, setFiltredFeedback] = useState(productRequests.slice(0,6));
   const [error , setError] = useState('');
-  
-  console.log('rendered')
 
-  useEffect(()=>{
-     console.log('mounted')
-  },[])
 
   
   const filter = (text) => {
@@ -64,7 +57,7 @@ function Home()
           </div>
         </div>
       </div>
-      <div className="cold-start-3 col-span-3 space-y-5">
+      <div className="col-start-3 col-span-3 space-y-5">
         <div className="">
           <div className="flex flex-col justify-between block bg-gray-800 items-center h-16 border-solid rounded-lg md:flex-row px-4">
             <div className="block md:flex-row">
@@ -82,8 +75,8 @@ function Home()
           </div>
         </div>
 
-        <div className="row-start-4 row-span-3 bg-white h-auto rounded-lg px-5 py-3">
-          <div className=" ">
+        <div className=" rounded-lg ">
+          <div className="">
             {error ? <p className="px-4 py-2 bg-red-400 text-white text-center font-semibold mt-8">error</p>:''}
             {
               !error && <Feedback_list productRequests={filtredFeedback} />
