@@ -18,10 +18,10 @@
           "id": 1,
           "content": "Awesome idea! Trying to find framework-specific projects within the hubs can be tedious",
           "user": {
-            "image": "./assets/user-images/image-suzanne.jpg",
+            "image": "../assets/user-images/image-suzanne.jpg",
             "name": "Suzanne Chang",
             "username": "upbeat1811"
-          }
+        }
         },
         {
           "id": 2,

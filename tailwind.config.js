@@ -20,6 +20,11 @@ module.exports = {
 
       },
     },
+    fontFamily: {
+      'Poppins': ['Poppins', 'sans-serif'],
+      'Jost': ['Jost', 'sans-serif'],
+
+    },
     },
   },
   variants: {
