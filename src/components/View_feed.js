@@ -21,7 +21,7 @@ function View_feed({ location, match, history }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="grid grid-cols-7 py-24 space-y-4 h-full">
+      <div className="grid grid-cols-7 py-16 space-y-4 h-full">
         <div className="col-start-3 col-span-3">
           <ButtonLink />
         </div>

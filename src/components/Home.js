@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
-import { LightBulbIcon } from "@heroicons/react/solid";
 import Feedback_list from "./Feedback_list";
 import { productRequests } from "../data.json";
 import "../divstyle.css";
 import EmptyFeed from "./EmptyFeed";
 import { motion } from "framer-motion";
 import DropDownNav from "./ui/DropDownNav";
+import { FaCircle } from "react-icons/fa";
 
 function Home() {
   const [sort, setSort] = useState("-voteScore");
@@ -38,7 +38,7 @@ function Home() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="grid grid-cols-6 gap-2 py-20">
+      <div className="grid grid-cols-6 gap-2 py-16">
         <div className=" col-start-2 space-y-5 ">
           <div className="intro h-32 bg-gray-800 rounded-lg py-6 px-6 ">
             <p className="text-white font-bold text-left font-Jost">
@@ -56,12 +56,21 @@ function Home() {
               }
             )}
           </div>
-          <div className="bg-white rounded-lg px-6 py-6 ">
-            <p className="text-black font-bold mb-4 font-Jost">RoadMap</p>
-            <div className="space-y-3">
-              <p className="text-sm font-Jost">Planned</p>
-              <p className="text-sm font-Jost">In Progress</p>
-              <p className="text-sm font-Jost">Live</p>
+          <div className="bg-white rounded-lg px-6 py-6 center ">
+            <p className="text-black font-bold text-xl mb-4 font-Jost">RoadMap</p>
+            <div className="space-y-3 flex flex-col">
+              <div className="flex flex-row space-x-2 ">
+                <FaCircle className="h-4 w-2 text-yellow-400" />
+                <p className="text-sm font-Jost ">Planned</p>
+              </div>
+              <div className="flex flw-row space-x-2">
+                <FaCircle className="h-4 w-2 text-purple-500 " />
+                <p className="text-sm font-Jost">In Progress</p>
+              </div>
+              <div className="flex flw-row space-x-2">
+                <FaCircle className="h-4 w-2 text-blue-600 " />
+                <p className="text-sm font-Jost">Live</p>
+              </div>
             </div>
           </div>
         </div>
