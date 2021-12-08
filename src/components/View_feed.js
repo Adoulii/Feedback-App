@@ -10,11 +10,27 @@ import ButtonSubmit from "./ui/ButtonSubmit";
 
 function View_feed({ location, match, history }) {
   const [view, setView] = useState(null);
+  const [comments, setComments] = useState(null);
+  const [value, setValue] = useState("");
   useEffect(() => {
-    const [feed] = productRequests.filter((val) => val.id === +match.params.id);
-    setView(feed);
+    if (+match.params.id <= productRequests.length) {
+      const feed = productRequests[+match.params.id - 1];
+      setView(feed);
+      setComments(feed.comments);
+    }
   }, []);
 
+  function submitComment(_) {
+    if (value.trim()) {
+      const comment = {
+        user: { name: "adouli", username: "adouli64" },
+        content: value,
+      };
+      setComments((prev) => prev.concat(comment));
+      setValue("");
+      /* productRequests[+match.params.id -1].comments.push(comment)  */
+    }
+  }
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -38,7 +54,11 @@ function View_feed({ location, match, history }) {
           ) : null}
         </div>
         <div className="col-start-3 col-span-3 bg-white rounded-lg ">
-          {view ? <Viewcom comments={view.comments} /> : ""}
+          {view ? (
+            <Viewcom comments={comments} setComments={setComments} />
+          ) : (
+            ""
+          )}
         </div>
         <div className="col-start-3 col-span-3 bg-white rounded-lg h-auto  ">
           <div className="py-4 ">
@@ -47,8 +67,12 @@ function View_feed({ location, match, history }) {
             </span>
           </div>
           <div className=" px-6 space-y-2    ">
-            <TextArea placeholder="Can't wait for dark mode" />
-            <ButtonSubmit text="Post Comment" />
+            <TextArea
+              placeholder="Can't wait for dark mode"
+              value={value}
+              setValue={setValue}
+            />
+            <ButtonSubmit text="Post Comment" onClick={submitComment} />
           </div>
         </div>
       </div>

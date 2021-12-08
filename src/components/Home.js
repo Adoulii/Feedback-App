@@ -57,7 +57,9 @@ function Home() {
             )}
           </div>
           <div className="bg-white rounded-lg px-6 py-6 center ">
-            <p className="text-black font-bold text-xl mb-4 font-Jost">RoadMap</p>
+            <p className="text-black font-bold text-xl mb-4 font-Jost">
+              RoadMap
+            </p>
             <div className="space-y-3 flex flex-col">
               <div className="flex flex-row space-x-2 ">
                 <FaCircle className="h-4 w-2 text-yellow-400" />
